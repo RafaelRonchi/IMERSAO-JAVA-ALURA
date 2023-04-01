@@ -24,7 +24,7 @@ public class App {
             
             var StickerGenerator = new StickerGenerator();
                 InputStream inputStream = new URL((content.get("url"))).openStream();
-                String fileName = "rafael-stickers/output/"+(content.get("title"))+".png";
+                String fileName = "output/"+(content.get("title"))+".png";
                 StickerGenerator.create(inputStream, fileName);
          
         }
