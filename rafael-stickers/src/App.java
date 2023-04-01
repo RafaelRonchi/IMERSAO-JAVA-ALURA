@@ -29,7 +29,8 @@ public class App {
             
             var StickerGenerator = new StickerGenerator();
                 InputStream inputStream = new URL((filmMap.get("image"))).openStream();
-                StickerGenerator.create(inputStream, (filmMap.get("title")+".png"));
+                String fileName = "rafael-stickers/output/"+(filmMap.get("title"))+".png";
+                StickerGenerator.create(inputStream, fileName);
          
             System.out.println(filmMap.get("title"));
             System.out.println(filmMap.get("image"));
@@ -38,3 +39,4 @@ public class App {
         
     }
 }
+ 
