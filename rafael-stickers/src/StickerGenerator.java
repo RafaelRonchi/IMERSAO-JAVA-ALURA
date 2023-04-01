@@ -18,14 +18,14 @@ public class StickerGenerator {
         //InputStream inputStream = new FileInputStream(new File("rafael-stickers/entrada/TopMovies_1.jpg"));
         //InputStream inputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_1.jpg").openStream();
 
+
+
         BufferedImage originalImg = ImageIO.read(inputStream);
-        
 
         // Cria nova img
-        int width = originalImg.getWidth();
-        int height = originalImg.getHeight();
+        int width = originalImg.getWidth(); //674
+        int height = originalImg.getHeight(); //1000
         int newHeight = height + 200;
-
         BufferedImage newImg = new BufferedImage( width,  newHeight, BufferedImage.TRANSLUCENT);
 
         // Copiar img original para nova img 
@@ -33,12 +33,12 @@ public class StickerGenerator {
         graphics.drawImage(originalImg, 0, 0, null);
 
         // Configurar texto 
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 84);
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 100);
         graphics.setColor(Color.ORANGE);
         graphics.setFont(font);
 
         // Escrever frase
-        graphics.drawString("TOP", 200, (newHeight-500));
+        graphics.drawString("TOP D+", ((width/2)-(width/4)), (newHeight-100));
         
         // Escrever a nova imagem em arquivo
         ImageIO.write(newImg, "png", new File(fileName));
