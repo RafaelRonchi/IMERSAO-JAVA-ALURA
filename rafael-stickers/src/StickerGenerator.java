@@ -14,27 +14,23 @@ import javax.imageio.ImageIO;
 public class StickerGenerator {
     
     public void create(InputStream inputStream, String fileName) throws Exception{
-        //Ler img
-        //InputStream inputStream = new FileInputStream(new File("rafael-stickers/entrada/TopMovies_1.jpg"));
-        //InputStream inputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_1.jpg").openStream();
-
-
 
         BufferedImage originalImg = ImageIO.read(inputStream);
 
         // Cria nova img
-        int width = originalImg.getWidth(); //674
-        int height = originalImg.getHeight(); //1000
+        int width = originalImg.getWidth();
+        int height = originalImg.getHeight();
         int newHeight = height + 200;
-        BufferedImage newImg = new BufferedImage( width,  newHeight, BufferedImage.TRANSLUCENT);
+        int newWidth  = height + 200;
+        BufferedImage newImg = new BufferedImage( newWidth,  newHeight, BufferedImage.TRANSLUCENT);
 
         // Copiar img original para nova img 
         Graphics2D graphics = (Graphics2D) newImg.getGraphics();
         graphics.drawImage(originalImg, 0, 0, null);
 
         // Configurar texto 
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 100);
-        graphics.setColor(Color.ORANGE);
+        Font font = new Font(Font.MONOSPACED, Font.BOLD, 100);
+        graphics.setColor(Color.GREEN);
         graphics.setFont(font);
 
         // Escrever frase

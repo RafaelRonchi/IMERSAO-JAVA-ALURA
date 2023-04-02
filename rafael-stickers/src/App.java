@@ -4,17 +4,18 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // NASA
-        //String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
-        //ContentExtractor contentExtractor = new contentExtractorNasa();
         
         // IMDB
-        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
-        //ContentExtractor contentExtractor = new contentExtractorIMDB();
+        //API api = API.IMDB;
+        
+        // NASA
+        //API api = API.NASA;
 
-        // localhost
-        String url = "http://localhost:8080/linguagens";
-        ContentExtractor contentExtractor = new contentExtractorIMDB();
+        // LOCAL HOST
+        API api = API.LOCAL;
+
+        String url = api.getUrl();
+        ContentExtractor contentExtractor = api.getExtrator();
 
         // Conexão HTTP
         var http = new ClientHttp();
