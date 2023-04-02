@@ -9,7 +9,11 @@ public class App {
         //ContentExtractor contentExtractor = new contentExtractorNasa();
         
         // IMDB
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        //ContentExtractor contentExtractor = new contentExtractorIMDB();
+
+        // localhost
+        String url = "http://localhost:8080/linguagens";
         ContentExtractor contentExtractor = new contentExtractorIMDB();
 
         // Conexão HTTP
